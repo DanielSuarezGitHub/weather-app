@@ -18,7 +18,7 @@ main {
   background: url(./assets/darkmode.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 653px;
+  min-height: 800px;
 }
 
 .weather {
