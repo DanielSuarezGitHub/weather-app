@@ -1,19 +1,22 @@
 import { fromUnixTime } from "date-fns";
 
 async function getweather(city) {
-  let response = await fetch(
-    `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=00d5d7663e47cc4b2303d054f78d8e8f`
-  );
-  let weather = await response.json();
-  weather = handleWeather(weather);
-  let weatherSimplified = weather;
-  weatherSimplified.timezone = convert.time(weatherSimplified.timezone);
-  weatherSimplified.country = convert.country(weatherSimplified.country);
-  weatherSimplified.temp = convert.kelvinToCelsius(weatherSimplified.temp);
-  weatherSimplified.feels_like = convert.kelvinToCelsius(
-    weatherSimplified.feels_like
-  );
-  return weatherSimplified;
+  try {
+    let response = await fetch(
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=00d5d7663e47cc4b2303d054f78d8e8f`
+    );
+    let weather = await response.json();
+    if (!response.ok) throw new Error(`City Not Found`);
+    weather = handleWeather(weather);
+    weather.timezone = convert.time(weather.timezone);
+    weather.country = convert.country(weather.country);
+    weather.temp = convert.kelvinToCelsius(weather.temp);
+    weather.feels_like = convert.kelvinToCelsius(weather.feels_like);
+    console.log(weather);
+    return weather;
+  } catch (error) {
+    console.error(error);
+  } 
 }
 
 function handleWeather(weatherObject) {

@@ -3,5 +3,3 @@ import { getweather } from "./weather";
 
 
 getweather("Vancouver");
-
-console.log("hello");
