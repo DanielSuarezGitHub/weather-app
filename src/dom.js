@@ -1,14 +1,16 @@
-class dom {
-    city = document.querySelector('.city')
-    country = document.querySelector('.country')
-    temp = document.querySelector('.temp')
-    currentConditions = document.querySelector('.conditions')
-    time = document.querySelector('.time')
-    windspeed = document.querySelector('.windspeed')
-    humidity = document.querySelector('.humidity')
-    feelslike = document.querySelector('.feelslike')
-    static render(weatherObject) {
-        console.log(weatherObject);
-    }
-}
+const dom = (() => {
+  function render(weatherObject) {
+    const city = document.getElementById('city')  
+    const country = document.querySelector('.country')
+    const temp = document.querySelector('.temp')
+    const conditions = document.querySelector('.conidtions')
+    const time = document.querySelector('.time')
+    const windspeed = document.querySelector('.windspeed')
+    const humidity = document.querySelector('.humidity')
+    const feelslike = document.querySelector('.feelslike')  
+    console.log(weatherObject);
+  }
+  return { render };
+})();
+
 export { dom };
