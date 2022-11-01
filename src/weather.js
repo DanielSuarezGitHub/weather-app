@@ -15,7 +15,7 @@ async function getweather(city) {
     console.log(weather);
     return weather;
   } catch (error) {
-    console.error(error);
+    console.error(error)
   } 
 }
 

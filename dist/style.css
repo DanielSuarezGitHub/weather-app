@@ -32,6 +32,10 @@ main {
   justify-content: center;
 }
 
+input {
+  color: white;
+}
+
 .search {
   justify-self: end;
   margin-right: 70px;
