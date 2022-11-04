@@ -5,30 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
     <script src="./main.js" defer></script>
 </head>
 <body>
     <main>
         <div class="search">
             <form action="">
-                <input id="city" type="search" placeholder="Search City" required pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$">
+                <input id="city" type="search" placeholder="Search City">
+                <div class="error hidden">City Not Found</div>
             </form>
         </div>
         <div class="weather">
             <div class="right">
                 <div class="location">
-                    <div id="city">Vancouver</div>
-                    <div class="country">Canada</div>
+                    <div class="city"></div>
+                    <div class="country"></div>
                 </div>
-                <div class="temp">14°C</div>
-                <div class="conditions">Moderate Rain</div>
-                <div class="time">7:30PM</div>
+                <div class="temp"></div>
+                <div class="conditions"></div>
+                <div class="time"></div>
                 </div>
                 <div class="left">
-                    <div class="windspeed">Wind Speed: 12km/h</div>
-                    <div class="humidity">Humidity: 94%</div>
-                    <div class="feelslike">Feels Like: 14°C</div>
+                    <div class="windspeed"></div>
+                    <div class="humidity"></div>
+                    <div class="feelslike"></div>
                 </div>
             </div>
     </main>

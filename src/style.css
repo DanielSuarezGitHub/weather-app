@@ -92,3 +92,18 @@ input {
     text-align: center;
   }
 }
+
+.error {
+  text-align: center;
+  background-color: red;
+  border-radius: 12px;
+  margin-top: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}

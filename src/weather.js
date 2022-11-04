@@ -1,4 +1,6 @@
 import { fromUnixTime } from "date-fns";
+import { dom } from "./dom";
+import { Form } from "./form";
 
 async function getweather(city) {
   try {
@@ -12,10 +14,10 @@ async function getweather(city) {
     weather.country = convert.country(weather.country);
     weather.temp = convert.kelvinToCelsius(weather.temp);
     weather.feels_like = convert.kelvinToCelsius(weather.feels_like);
-    console.log(weather);
-    return weather;
+    weather.windspeed = Math.round(weather.windspeed)
+    dom.render(weather)
   } catch (error) {
-    console.error(error)
+    Form.showError()
   } 
 }
 
@@ -54,7 +56,8 @@ const convert = (() => {
     }
   };
 
-  return { country, kelvinToCelsius, time };
+
+  return { country, kelvinToCelsius, time};
 })();
 
 export { getweather };
